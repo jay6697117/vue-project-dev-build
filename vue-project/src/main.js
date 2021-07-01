@@ -3,6 +3,10 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+// 我是测试
+// 我是测试
+// 我是测试
+// 我是测试
 Vue.config.productionTip = false;
 
 new Vue({

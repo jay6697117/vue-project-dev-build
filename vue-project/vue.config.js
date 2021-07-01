@@ -1,5 +1,6 @@
 // const path = require('path')
 // const webpack = require('webpack')
+const TerserPlugin = require('terser-webpack-plugin')
 const merge = require('webpack-merge')
 const publicPath = process.env.NODE_ENV === 'production' ? '/subpath/' : '/'
 
@@ -16,6 +17,25 @@ module.exports = {
           limit: 5120
         })
       )
+  },
+  configureWebpack: {
+    // plugins: [],
+    optimization: {
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          sourceMap: false,
+          terserOptions: {
+            compress: {
+              warnings: false,
+              drop_console: true, // 去除console
+              drop_debugger: true, // 去除debugger
+              pure_funcs: ['console.log']
+            }
+          }
+        })
+      ]
+    }
   },
   devServer: {
     open: true, // 是否自动打开浏览器页面
