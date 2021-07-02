@@ -7,6 +7,10 @@ import store from "./store";
 // 我是测试
 // 我是测试
 // 我是测试
+console.log('测试console1')
+console.log('测试console2')
+console.log('测试console3')
+console.log('测试console4')
 Vue.config.productionTip = false;
 
 new Vue({

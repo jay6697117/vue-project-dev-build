@@ -6,10 +6,13 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "inspect": "vue-cli-service inspect > webpack.inspect.js"
+    "inspect": "vue-cli-service inspect > webpack.inspect.js",
+    "inspect:plugins": "vue-cli-service inspect plugins > webpack.inspect.plugins.js",
+    "analyz": "cross-env NODE_ENV=production npm_config_report=true npm run build"
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "express": "^4.17.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
@@ -20,6 +23,8 @@
     "@vue/cli-service": "^3.12.0",
     "@vue/eslint-config-prettier": "^5.0.0",
     "babel-eslint": "^10.0.1",
+    "compression-webpack-plugin": "5.0.2",
+    "cross-env": "^7.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.0.0",
