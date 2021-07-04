@@ -9,8 +9,17 @@ const merge = require('webpack-merge')
 const express = require('express')
 // eslint-disable-next-line
 const app = express()
-// console.log(`app:`, app)
-const publicPath = process.env.NODE_ENV === 'production' ? '/prod/' : '/dev/'
+
+let publicPath
+if (process.env.NODE_ENV === 'production'){
+  publicPath = '/prop/'
+} else if (process.env.NODE_ENV === 'development'){
+  publicPath = '/dev/'
+} else if (process.env.NODE_ENV === 'stage'){
+  publicPath = '/stage666/'
+} else {
+  publicPath = '/'
+}
 
 // function resolve(dir) {
 //   return path.join(__dirname, dir)
@@ -81,9 +90,13 @@ module.exports = {
     https: false, // 使用https提供服务
     proxy: null, // string | Object 代理设置
     // 提供在服务器内部的其他中间件之前执行自定义中间件的能力
+    // eslint-disable-next-line
     before: app => {
       // `app` 是一个 express 实例
-      console.log(`\ndevServer app:`, app)
     }
   }
 }
+
+console.log(`process.env.NODE_ENV:`, process.env.NODE_ENV)
+console.log(`process.env.VUE_APP_TITLE:`, process.env.VUE_APP_TITLE)
+console.log(`process.env:`, process.env)

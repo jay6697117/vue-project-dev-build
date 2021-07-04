@@ -12,6 +12,9 @@ console.log('测试console2')
 console.log('测试console3')
 console.log('测试console4')
 Vue.config.productionTip = false;
+console.log(`main process.env.NODE_ENV:`, process.env.NODE_ENV)
+console.log(`main process.env.VUE_APP_TITLE:`, process.env.VUE_APP_TITLE)
+console.log(`main process.env:`, process.env)
 
 new Vue({
   router,
