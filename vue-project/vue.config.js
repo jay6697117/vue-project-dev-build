@@ -5,17 +5,20 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin') // 开启
 const productionGzipExtensions = /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i // 开启gzip压缩,按需写入
 const TerserPlugin = require('terser-webpack-plugin')
 const merge = require('webpack-merge')
+const configs = require('./config')
+console.log('-----------------------------')
+console.log(`configs:`, configs)
 
 const express = require('express')
 // eslint-disable-next-line
 const app = express()
 
 let publicPath
-if (process.env.NODE_ENV === 'production'){
+if (process.env.NODE_ENV === 'production') {
   publicPath = '/prop/'
-} else if (process.env.NODE_ENV === 'development'){
+} else if (process.env.NODE_ENV === 'development') {
   publicPath = '/dev/'
-} else if (process.env.NODE_ENV === 'stage'){
+} else if (process.env.NODE_ENV === 'stage') {
   publicPath = '/stage666/'
 } else {
   publicPath = '/'
@@ -38,7 +41,24 @@ module.exports = {
         merge(options, {
           limit: 5120 // 5M
         })
-      )
+      ),
+      config.plugin('define').tap(options => {
+        console.log('-----------------------------')
+        console.log(`options 001:`, options)
+
+        let envObj
+        if (process.env.NODE_ENV === 'production') {
+          envObj = configs.build.env
+        } else if (process.env.NODE_ENV === 'development') {
+          envObj = configs.dev.env
+        } else if (process.env.NODE_ENV === 'stage') {
+          envObj = configs.stage.env
+        }
+        console.log(`envObj`, envObj)
+        options[0]['process.env'] = merge(options[0]['process.env'], envObj)
+        console.log(`options 002:`, options)
+        return options
+      })
   },
   // eslint-disable-next-line
   configureWebpack: config => {
@@ -99,4 +119,7 @@ module.exports = {
 
 console.log(`process.env.NODE_ENV:`, process.env.NODE_ENV)
 console.log(`process.env.VUE_APP_TITLE:`, process.env.VUE_APP_TITLE)
-console.log(`process.env:`, process.env)
+// console.log(`process.env:`, process.env)
+
+// const aaa = [{ 'process.env': { NODE_ENV: '"stage"', VUE_APP_TITLE: '"stage mode"', BASE_URL: '"/stage666/"' } }]
+// console.log(`aaa`, aaa)
