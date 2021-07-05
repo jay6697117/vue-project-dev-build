@@ -120,7 +120,7 @@ module.exports = {
 console.log(`process.env.NODE_ENV:`, process.env.NODE_ENV)
 console.log(`process.env.BASE_URL:`, process.env.BASE_URL)
 console.log(`process.env.VUE_APP_TITLE:`, process.env.VUE_APP_TITLE)
-// console.log(`process.env:`, process.env)
+console.log(`process.env:`, process.env)
 
 // const aaa = [{ 'process.env': { NODE_ENV: '"stage"', VUE_APP_TITLE: '"stage mode"', BASE_URL: '"/stage666/"' } }]
 // console.log(`aaa`, aaa)
