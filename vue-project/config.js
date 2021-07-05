@@ -5,7 +5,7 @@ const comDev = {
 }
 
 const comStage = {
-  IP: JSON.stringify('xxx-stage')
+  IP: JSON.stringify('xxx-stage2')
 }
 
 const comProd = {
@@ -31,9 +31,9 @@ module.exports = {
   },
 
   // 开发环境变量
-  stage: {
+  stage2: {
     env: {
-      TYPE: JSON.stringify('stage'),
+      TYPE: JSON.stringify('stage2'),
       // ...com
       ...comStage
     }

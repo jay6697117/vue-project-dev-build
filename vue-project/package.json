@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "stage": "vue-cli-service serve --mode stage",
+    "stage2": "vue-cli-service serve --mode=stage2",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "inspect": "vue-cli-service inspect > webpack.inspect.js",
@@ -32,6 +32,7 @@
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "prettier": "^1.18.2",
+    "vconsole": "3.1.0",
     "vue-template-compiler": "^2.6.10"
   }
 }

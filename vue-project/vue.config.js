@@ -18,8 +18,8 @@ if (process.env.NODE_ENV === 'production') {
   publicPath = '/prop/'
 } else if (process.env.NODE_ENV === 'development') {
   publicPath = '/dev/'
-} else if (process.env.NODE_ENV === 'stage') {
-  publicPath = '/stage666/'
+} else if (process.env.NODE_ENV === 'stage2') {
+  publicPath = '/stage2/'
 } else {
   publicPath = '/'
 }
@@ -51,8 +51,8 @@ module.exports = {
           envObj = configs.build.env
         } else if (process.env.NODE_ENV === 'development') {
           envObj = configs.dev.env
-        } else if (process.env.NODE_ENV === 'stage') {
-          envObj = configs.stage.env
+        } else if (process.env.NODE_ENV === 'stage2') {
+          envObj = configs.stage2.env
         }
         console.log(`envObj`, envObj)
         options[0]['process.env'] = merge(options[0]['process.env'], envObj)
@@ -118,6 +118,7 @@ module.exports = {
 }
 
 console.log(`process.env.NODE_ENV:`, process.env.NODE_ENV)
+console.log(`process.env.BASE_URL:`, process.env.BASE_URL)
 console.log(`process.env.VUE_APP_TITLE:`, process.env.VUE_APP_TITLE)
 // console.log(`process.env:`, process.env)
 

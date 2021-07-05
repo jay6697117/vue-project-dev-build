@@ -8300,6 +8300,11 @@ vary@~1.1.2:
   resolved "https://registry.nlark.com/vary/download/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
+vconsole@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.nlark.com/vconsole/download/vconsole-3.1.0.tgz?cache=0&sync_timestamp=1624527250130&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fvconsole%2Fdownload%2Fvconsole-3.1.0.tgz#24d267c99e5de9cd79143b9823478086ae6f506b"
+  integrity sha1-JNJnyZ5d6c15FDuYI0eAhq5vUGs=
+
 vendors@^1.0.0:
   version "1.0.4"
   resolved "https://registry.nlark.com/vendors/download/vendors-1.0.4.tgz#e2b800a53e7a29b93506c3cf41100d16c4c4ad8e"

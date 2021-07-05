@@ -4,7 +4,10 @@ import Home from './views/Home.vue'
 
 Vue.use(Router)
 
+const base = process.env.BASE_URL // 获取二级目录
 export default new Router({
+  mode: 'history',
+  base: base,  // 设置 base 值
   routes: [
     {
       path: '/',
